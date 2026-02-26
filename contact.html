@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - AHealth</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon.png">
+</head>
+
+<body data-theme="light">
+
+    <!-- Navbar (Identical) -->
+    <nav class="navbar navbar-expand-lg glass-nav sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.svg" alt="AHealth Logo">
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+                <div class="offcanvas-header">
+                    <img src="assets/images/logo.svg" alt="AHealth Logo" height="30">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 align-items-center">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Home
+                            </a>
+                            <ul class="dropdown-menu border-0 shadow-sm glass-card">
+                                <li><a class="dropdown-item" href="index.html">Home 1 (Classic)</a></li>
+                                <li><a class="dropdown-item" href="home-2.html">Home 2 (Glass Modern)</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="doctors.html">Doctors</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                        <li class="nav-item ms-lg-3">
+                            <div class="theme-toggle" id="theme-toggle">
+                                <i class="bi bi-moon-fill"></i>
+                            </div>
+                        </li>
+                        <li class="nav-item ms-lg-4">
+                            <a href="appointments.html" class="btn btn-primary">Book Now</a>
+                        </li>
+                        <li class="nav-item ms-lg-2">
+                            <a href="dashboard.html" class="nav-link"><i class="bi bi-speedometer2 fs-5"></i></a>
+                        </li>
+                        <li class="nav-item ms-lg-2">
+                            <a href="login.html" class="nav-link"><i class="bi bi-person-circle fs-5"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="py-5 bg-primary bg-opacity-10 position-relative">
+        <img src="assets/images/contact-banner.jpg"
+            class="position-absolute top-0 left-0 w-100 h-100 object-fit-cover opacity-10" alt="Banner"
+            style="z-index: -1;">
+        <div class="container py-4 text-center">
+            <h1 class="display-4 fw-bold mb-3">Get in Touch</h1>
+            <p class="lead text-secondary mx-auto" style="max-width: 700px;">Have questions or need support? Our
+                team is here for you 24/7.</p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-5 fade-in">
+                    <h2 class="fw-bold mb-4">Contact Information</h2>
+                    <p class="text-secondary mb-5">Feel free to reach out via any of these channels. We typically
+                        respond within 24 hours.</p>
+
+                    <div class="d-flex mb-4">
+                        <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 me-3 flex-shrink-0">
+                            <i class="bi bi-geo-alt-fill fs-4"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold">Our Headquarters</h5>
+                            <p class="text-secondary mb-0">123 Health Ave, Silicon Valley, CA 94025, United States</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-4">
+                        <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 me-3 flex-shrink-0">
+                            <i class="bi bi-envelope-fill fs-4"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold">Email Support</h5>
+                            <p class="text-secondary mb-0">support@ahealth.com<br>info@ahealth.com</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-4">
+                        <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 me-3 flex-shrink-0">
+                            <i class="bi bi-telephone-fill fs-4"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold">Phone Support</h5>
+                            <p class="text-secondary mb-0">+1 (800) 123-4567<br>+1 (800) 987-6543</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 fade-in">
+                    <div class="glass-card p-4 p-md-5">
+                        <h2 class="fw-bold mb-4">Send a Message</h2>
+                        <form>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold">First Name</label>
+                                    <input type="text" class="form-control p-3" placeholder="John">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold">Last Name</label>
+                                    <input type="text" class="form-control p-3" placeholder="Doe">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-bold">Email Address</label>
+                                    <input type="email" class="form-control p-3" placeholder="john@example.com">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-bold">Subject</label>
+                                    <input type="text" class="form-control p-3" placeholder="How can we help?">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-bold">Message</label>
+                                    <textarea class="form-control p-3" rows="5"
+                                        placeholder="Your message..."></textarea>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button type="submit" class="btn btn-primary btn-lg w-100 p-3">Submit
+                                        Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Placeholder -->
+    <section class="py-5 bg-light text-center">
+        <div class="container">
+            <div class="glass-card p-5 h-100 fade-in position-relative overflow-hidden" style="min-height: 300px;">
+                <div class="position-absolute top-50 start-50 translate-middle w-100">
+                    <i class="bi bi-map text-primary display-1 opacity-10"></i>
+                    <h4 class="fw-bold mt-3">Interactive Map View</h4>
+                    <p class="text-secondary">Our physical presence across 20+ locations worldwide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Identical) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <img src="assets/images/logo.svg" alt="AHealth Logo" class="mb-4">
+                    <p class="text-secondary">Providing modern healthcare solutions for everyone, everywhere. Reliable,
+                        secure, and professional.</p>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <h6 class="fw-bold mb-4">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-secondary text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-secondary text-decoration-none">About</a></li>
+                        <li class="mb-2"><a href="services.html"
+                                class="text-secondary text-decoration-none">Services</a></li>
+                        <li class="mb-2"><a href="doctors.html" class="text-secondary text-decoration-none">Doctors</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="fw-bold mb-4">Newsletter</h6>
+                    <p class="text-secondary small mb-4">Subscribe to get the latest health tips and updates.</p>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Email Address">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-5 mb-4 opacity-10">
+            <div class="text-center text-secondary small">
+                <p class="mb-0">&copy; 2024 AHealth TeleHealth. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="btn btn-primary shadow">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

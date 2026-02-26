@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - AHealth</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-light);
+        }
+
+        .dashboard-topbar {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 0.8rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .brand-name {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .dashboard-content {
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .welcome-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .stat-card {
+            padding: 1.5rem;
+            border-radius: 16px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.2rem;
+            font-size: 1.5rem;
+        }
+
+        .appointment-item {
+            display: flex;
+            align-items: center;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .appointment-item:last-child {
+            border-bottom: none;
+        }
+
+        .status-badge {
+            font-size: 0.75rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .health-record-card {
+            padding: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            transition: all 0.2s ease;
+            background: var(--bg-light);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+        }
+
+        .health-record-card:hover {
+            background: rgba(13, 110, 253, 0.05) !important;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-topbar {
+                padding: 0.8rem 1rem;
+            }
+
+            .dashboard-content {
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon.png">
+</head>
+
+<body data-theme="light">
+
+    <!-- Top Bar -->
+    <header class="dashboard-topbar">
+        <a href="index.html" class="brand-name">
+            <img src="assets/images/logo.svg" alt="AHealth" height="32">
+        </a>
+        <div class="d-flex align-items-center gap-3">
+            <div class="theme-toggle" id="theme-toggle">
+                <i class="bi bi-moon-fill"></i>
+            </div>
+            <a href="index.html" class="btn btn-outline-primary btn-sm px-3 rounded-pill fw-semibold">
+                <i class="bi bi-box-arrow-right me-2"></i>Logout
+            </a>
+        </div>
+    </header>
+
+    <main class="dashboard-content">
+        <!-- Section 1: Welcome -->
+        <section class="welcome-section">
+            <h1 class="fw-bold mb-2">Welcome back, John</h1>
+            <p class="text-secondary mb-0">Your daily health summary is ready. You have 2 consultations today.</p>
+        </section>
+
+        <!-- Section 2: Stats Row -->
+        <section class="row g-4 mb-5">
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card">
+                    <div class="stat-icon bg-primary bg-opacity-10 text-primary">
+                        <i class="bi bi-calendar-check"></i>
+                    </div>
+                    <h3 class="fw-bold mb-1">2</h3>
+                    <p class="text-secondary small mb-0">Upcoming Appointments</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card">
+                    <div class="stat-icon bg-success bg-opacity-10 text-success">
+                        <i class="bi bi-chat-heart"></i>
+                    </div>
+                    <h3 class="fw-bold mb-1">24</h3>
+                    <p class="text-secondary small mb-0">Completed Consultations</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card">
+                    <div class="stat-icon bg-warning bg-opacity-10 text-warning">
+                        <i class="bi bi-capsule-pill"></i>
+                    </div>
+                    <h3 class="fw-bold mb-1">5</h3>
+                    <p class="text-secondary small mb-0">Active Prescriptions</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card">
+                    <div class="stat-icon bg-info bg-opacity-10 text-info">
+                        <i class="bi bi-file-earmark-medical"></i>
+                    </div>
+                    <h3 class="fw-bold mb-1">12</h3>
+                    <p class="text-secondary small mb-0">Medical Reports</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="row g-4 mb-5">
+            <!-- Section 3: Upcoming Appointments -->
+            <div class="col-lg-8">
+                <div class="glass-card p-4 h-100">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h5 class="fw-bold mb-0">Upcoming Appointments</h5>
+                        <button class="btn btn-primary btn-sm rounded-pill px-3">Book New</button>
+                    </div>
+                    <div class="appointment-list">
+                        <div class="appointment-item">
+                            <div class="flex-grow-1">
+                                <h6 class="fw-bold mb-1">Dr. Sarah Johnson</h6>
+                                <p class="text-secondary small mb-0"><i class="bi bi-clock me-2"></i>Today, 10:30 AM •
+                                    Cardiology</p>
+                            </div>
+                            <div class="text-end">
+                                <span
+                                    class="status-badge bg-success bg-opacity-10 text-success mb-2 d-inline-block">Confirmed</span>
+                                <div>
+                                    <button class="btn btn-primary btn-sm px-3 rounded-pill">Join call</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="appointment-item">
+                            <div class="flex-grow-1">
+                                <h6 class="fw-bold mb-1">Dr. Michael Chen</h6>
+                                <p class="text-secondary small mb-0"><i class="bi bi-clock me-2"></i>Oct 29, 2:00 PM •
+                                    Mental Health</p>
+                            </div>
+                            <div class="text-end">
+                                <span
+                                    class="status-badge bg-warning bg-opacity-10 text-warning mb-2 d-inline-block">Pending</span>
+                                <div>
+                                    <button
+                                        class="btn btn-outline-secondary btn-sm px-3 rounded-pill">Reschedule</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: Health Records -->
+            <div class="col-lg-4">
+                <div class="glass-card p-4 h-100">
+                    <h5 class="fw-bold mb-4">Recent Health Records</h5>
+                    <div class="records-list">
+                        <div class="health-record-card glass-card">
+                            <div class="bg-primary bg-opacity-10 text-primary p-2 rounded-3">
+                                <i class="bi bi-file-earmark-pdf fs-4"></i>
+                            </div>
+                            <div class="flex-grow-1 overflow-hidden">
+                                <h6 class="fw-bold mb-0 text-truncate">Blood_Test_Oct.pdf</h6>
+                                <small class="text-secondary">2 days ago • 1.2 MB</small>
+                            </div>
+                            <i class="bi bi-download text-primary cursor-pointer"></i>
+                        </div>
+                        <div class="health-record-card glass-card">
+                            <div class="bg-primary bg-opacity-10 text-primary p-2 rounded-3">
+                                <i class="bi bi-file-earmark-text fs-4"></i>
+                            </div>
+                            <div class="flex-grow-1 overflow-hidden">
+                                <h6 class="fw-bold mb-0 text-truncate">Prescription_Rev.docx</h6>
+                                <small class="text-secondary">1 week ago • 45 KB</small>
+                            </div>
+                            <i class="bi bi-download text-primary cursor-pointer"></i>
+                        </div>
+                        <div class="health-record-card glass-card">
+                            <div class="bg-primary bg-opacity-10 text-primary p-2 rounded-3">
+                                <i class="bi bi-file-earmark-image fs-4"></i>
+                            </div>
+                            <div class="flex-grow-1 overflow-hidden">
+                                <h6 class="fw-bold mb-0 text-truncate">X-Ray_Chest.jpg</h6>
+                                <small class="text-secondary">2 weeks ago • 3.5 MB</small>
+                            </div>
+                            <i class="bi bi-download text-primary cursor-pointer"></i>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline-primary w-100 mt-3 rounded-pill">View All Records</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

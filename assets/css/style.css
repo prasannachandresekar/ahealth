@@ -1,0 +1,261 @@
+:root {
+    --primary-blue: #0d6efd;
+    --secondary-blue: #00b4d8;
+    --bg-light: #f8f9fa;
+    --bg-dark: #050b18;
+    /* Deep navy blue */
+    --card-bg-light: #ffffff;
+    --card-bg-dark: #0e1628;
+    --text-light: #212529;
+    --text-dark: #f8f9fa;
+    --glass-bg: rgba(255, 255, 255, 0.9);
+    /* Increased opacity for light mode */
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-bg-dark: rgba(14, 22, 40, 0.85);
+    /* Slightly more opaque dark mode */
+    --glass-border-dark: rgba(255, 255, 255, 0.1);
+    --transition-speed: 0.3s;
+}
+
+[data-theme="dark"] {
+    --bg-light: var(--bg-dark);
+    --card-bg-light: var(--card-bg-dark);
+    --text-light: var(--text-dark);
+    --glass-bg: var(--glass-bg-dark);
+    --glass-border: var(--glass-border-dark);
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-light);
+    font-family: 'Inter', sans-serif;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Glassmorphism Classes */
+.glass-nav {
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.glass-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
+    /* Darker shadow for light mode visibility */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.15);
+}
+
+/* Navbar */
+.navbar-brand img {
+    height: 36px;
+    width: auto;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--text-light) !important;
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: var(--primary-blue) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(13, 110, 253, 0.1), transparent);
+    z-index: -1;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-blue);
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    transform: scale(1.02);
+}
+
+/* Dark Mode Toggle */
+.theme-toggle {
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.theme-toggle:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Back to Top */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+    z-index: 1000;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Transitions */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Footer */
+footer {
+    background-color: var(--card-bg-light);
+    border-top: 1px solid var(--glass-border);
+    padding: 60px 0 20px;
+}
+
+/* Image styling */
+.card-img-top {
+    height: 220px;
+    object-fit: cover;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.hero-section img {
+    width: 100%;
+    height: auto;
+}
+
+/* Forms */
+.form-control {
+    background-color: var(--card-bg-light);
+    border-color: var(--glass-border);
+    color: var(--text-light);
+}
+
+.form-control:focus {
+    background-color: var(--card-bg-light);
+    color: var(--text-light);
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+}
+
+/* Timeline Style for Home 2 */
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: var(--primary-blue);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+    }
+}
+
+.text-muted {
+    color: var(--text-light) !important;
+    opacity: 0.75;
+}
+
+footer,
+footer p,
+footer a,
+footer h5,
+footer li {
+    color: var(--text-light) !important;
+}
+
+footer a:hover {
+    color: var(--primary-blue) !important;
+}
+
+.theme-toggle i,
+.theme-toggle svg {
+    color: var(--text-light) !important;
+    opacity: 1 !important;
+}
+
+.bi {
+    color: var(--text-light);
+}
+
+.glass-nav {
+    background: var(--glass-bg) !important;
+}
+
+.glass-nav .nav-link {
+    color: var(--text-light) !important;
+}
+
+/* Fix Dropdown in Dark Mode */
+.dropdown-menu {
+    background-color: var(--card-bg-light);
+    border: 1px solid var(--glass-border);
+}
+
+.dropdown-item {
+    color: var(--text-light) !important;
+}
+
+.dropdown-item:hover {
+    background-color: var(--primary-blue);
+    color: #fff !important;
+}

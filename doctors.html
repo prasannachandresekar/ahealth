@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Doctors - AHealth</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon.png">
+</head>
+
+<body data-theme="light">
+
+    <!-- Navbar (Identical) -->
+    <nav class="navbar navbar-expand-lg glass-nav sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.svg" alt="AHealth Logo">
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+                <div class="offcanvas-header">
+                    <img src="assets/images/logo.svg" alt="AHealth Logo" height="30">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 align-items-center">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Home
+                            </a>
+                            <ul class="dropdown-menu border-0 shadow-sm glass-card">
+                                <li><a class="dropdown-item" href="index.html">Home 1 (Classic)</a></li>
+                                <li><a class="dropdown-item" href="home-2.html">Home 2 (Glass Modern)</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="doctors.html">Doctors</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item ms-lg-3">
+                            <div class="theme-toggle" id="theme-toggle">
+                                <i class="bi bi-moon-fill"></i>
+                            </div>
+                        </li>
+                        <li class="nav-item ms-lg-4">
+                            <a href="appointments.html" class="btn btn-primary">Book Now</a>
+                        </li>
+                        <li class="nav-item ms-lg-2">
+                            <a href="dashboard.html" class="nav-link"><i class="bi bi-speedometer2 fs-5"></i></a>
+                        </li>
+                        <li class="nav-item ms-lg-2">
+                            <a href="login.html" class="nav-link"><i class="bi bi-person-circle fs-5"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="py-5 bg-primary bg-opacity-10">
+        <div class="container py-4 text-center">
+            <h1 class="display-4 fw-bold mb-3 fade-in">Our Specialists</h1>
+            <p class="lead text-secondary mx-auto fade-in" style="max-width: 700px;">Connect with top medical experts
+                from across the world. Highly qualified, board-certified, and compassionate care.</p>
+        </div>
+    </section>
+
+    <!-- Search/Filter Bar -->
+    <section class="py-4 glass-nav border-top-0 border-bottom">
+        <div class="container">
+            <div class="row g-3">
+                <div class="col-md-5">
+                    <div class="input-group">
+                        <span class="input-group-text bg-transparent border-end-0"><i class="bi bi-search"></i></span>
+                        <input type="text" class="form-control border-start-0 ps-0"
+                            placeholder="Search by doctor name or specialty...">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select">
+                        <option selected>All Specialties</option>
+                        <option>Cardiology</option>
+                        <option>Mental Health</option>
+                        <option>Dermatology</option>
+                        <option>Pediatrics</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select">
+                        <option selected>Availability</option>
+                        <option>Available Today</option>
+                        <option>This Week</option>
+                    </select>
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-primary w-100"><i class="bi bi-sliders"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Grid -->
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="row g-4">
+                <!-- Doctor 1 -->
+                <div class="col-md-6 col-lg-4 col-xl-3 fade-in">
+                    <div class="glass-card overflow-hidden h-100 d-flex flex-column">
+                        <img src="assets/images/doctor-1.jpg" alt="Dr. Sarah Johnson" class="card-img-top">
+                        <div class="p-4 flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <h5 class="fw-bold mb-0">Dr. Sarah Johnson</h5>
+                                    <small class="text-primary fw-semibold">Cardiologist</small>
+                                </div>
+                                <span class="badge bg-primary bg-opacity-10 text-primary">4.9 <i
+                                        class="bi bi-star-fill small"></i></span>
+                            </div>
+                            <p class="text-secondary small mb-4">Ekspert in non-invasive cardiology and preventive heart
+                                care.</p>
+                            <div class="mb-4">
+                                <small class="text-muted d-block mb-1"><i class="bi bi-globe me-2"></i> English,
+                                    Spanish</small>
+                                <small class="text-muted d-block"><i class="bi bi-briefcase me-2"></i> 12 Years
+                                    Exp.</small>
+                            </div>
+                        </div>
+                        <div class="p-4 pt-0">
+                            <hr class="mt-0 mb-3 opacity-10">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">$120 <small class="text-muted fw-normal">/
+                                        Session</small></span>
+                                <a href="appointments.html" class="btn btn-sm btn-primary px-3">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Doctor 2 -->
+                <div class="col-md-6 col-lg-4 col-xl-3 fade-in">
+                    <div class="glass-card overflow-hidden h-100 d-flex flex-column">
+                        <img src="assets/images/doctor-2.jpg" alt="Dr. Michael Chen" class="card-img-top">
+                        <div class="p-4 flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <h5 class="fw-bold mb-0">Dr. Michael Chen</h5>
+                                    <small class="text-primary fw-semibold">Mental Health</small>
+                                </div>
+                                <span class="badge bg-primary bg-opacity-10 text-primary">4.8 <i
+                                        class="bi bi-star-fill small"></i></span>
+                            </div>
+                            <p class="text-secondary small mb-4">Focused on clinical psychology and cognitive behavioral
+                                therapy.</p>
+                            <div class="mb-4">
+                                <small class="text-muted d-block mb-1"><i class="bi bi-globe me-2"></i> English,
+                                    Mandarin</small>
+                                <small class="text-muted d-block"><i class="bi bi-briefcase me-2"></i> 8 Years
+                                    Exp.</small>
+                            </div>
+                        </div>
+                        <div class="p-4 pt-0">
+                            <hr class="mt-0 mb-3 opacity-10">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">$95 <small class="text-muted fw-normal">/
+                                        Session</small></span>
+                                <a href="appointments.html" class="btn btn-sm btn-primary px-3">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeating doctors with same images for demo -->
+                <div class="col-md-6 col-lg-4 col-xl-3 fade-in">
+                    <div class="glass-card overflow-hidden h-100 d-flex flex-column">
+                        <img src="assets/images/doctor-3.jpg" alt="Dr. Emily Williams" class="card-img-top">
+                        <div class="p-4 flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <h5 class="fw-bold mb-0">Dr. Emily Williams</h5>
+                                    <small class="text-primary fw-semibold">Pediatrician</small>
+                                </div>
+                                <span class="badge bg-primary bg-opacity-10 text-primary">5.0 <i
+                                        class="bi bi-star-fill small"></i></span>
+                            </div>
+                            <p class="text-secondary small mb-4">Comprehensive pediatric care with a focus on child
+                                development.</p>
+                            <div class="mb-4">
+                                <small class="text-muted d-block mb-1"><i class="bi bi-globe me-2"></i> English,
+                                    French</small>
+                                <small class="text-muted d-block"><i class="bi bi-briefcase me-2"></i> 15 Years
+                                    Exp.</small>
+                            </div>
+                        </div>
+                        <div class="p-4 pt-0">
+                            <hr class="mt-0 mb-3 opacity-10">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">$150 <small class="text-muted fw-normal">/
+                                        Session</small></span>
+                                <a href="appointments.html" class="btn btn-sm btn-primary px-3">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3 fade-in">
+                    <div class="glass-card overflow-hidden h-100 d-flex flex-column">
+                        <img src="assets/images/doctor-4.jpg" alt="Dr. Robert Fox" class="card-img-top">
+                        <div class="p-4 flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div>
+                                    <h5 class="fw-bold mb-0">Dr. Robert Fox</h5>
+                                    <small class="text-primary fw-semibold">Dermatologist</small>
+                                </div>
+                                <span class="badge bg-primary bg-opacity-10 text-primary">4.7 <i
+                                        class="bi bi-star-fill small"></i></span>
+                            </div>
+                            <p class="text-secondary small mb-4">Specialist in medical and cosmetic dermatology
+                                procedures.</p>
+                            <div class="mb-4">
+                                <small class="text-muted d-block mb-1"><i class="bi bi-globe me-2"></i> English</small>
+                                <small class="text-muted d-block"><i class="bi bi-briefcase me-2"></i> 10 Years
+                                    Exp.</small>
+                            </div>
+                        </div>
+                        <div class="p-4 pt-0">
+                            <hr class="mt-0 mb-3 opacity-10">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">$110 <small class="text-muted fw-normal">/
+                                        Session</small></span>
+                                <a href="appointments.html" class="btn btn-sm btn-primary px-3">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <nav class="mt-5 fade-in">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled"><a class="page-link" href="#"><i class="bi bi-chevron-left"></i></a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#"><i class="bi bi-chevron-right"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Footer (Identical) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <img src="assets/images/logo.svg" alt="AHealth Logo" class="mb-4">
+                    <p class="text-secondary">Providing modern healthcare solutions for everyone, everywhere. Reliable,
+                        secure, and professional.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="text-primary fs-4"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-primary fs-4"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-primary fs-4"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-primary fs-4"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <h6 class="fw-bold mb-4">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-secondary text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-secondary text-decoration-none">About</a></li>
+                        <li class="mb-2"><a href="services.html"
+                                class="text-secondary text-decoration-none">Services</a></li>
+                        <li class="mb-2"><a href="doctors.html" class="text-secondary text-decoration-none">Doctors</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <h6 class="fw-bold mb-4">Support</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="contact.html" class="text-secondary text-decoration-none">Contact
+                                Us</a></li>
+                        <li class="mb-2"><a href="faq.html" class="text-secondary text-decoration-none">FAQ</a></li>
+                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Terms of Service</a>
+                        </li>
+                        <li class="mb-2"><a href="#" class="text-secondary text-decoration-none">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="fw-bold mb-4">Newsletter</h6>
+                    <p class="text-secondary small mb-4">Subscribe to get the latest health tips and updates.</p>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Email Address">
+                        <button class="btn btn-primary" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-5 mb-4 opacity-10">
+            <div class="text-center text-secondary small">
+                <p class="mb-0">&copy; 2024 AHealth TeleHealth. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="btn btn-primary shadow">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
