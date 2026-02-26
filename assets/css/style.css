@@ -7,7 +7,7 @@
     --card-bg-light: #ffffff;
     --card-bg-dark: #0e1628;
     --text-light: #212529;
-    --text-dark: #f8f9fa;
+    --text-dark: #ffffff;
     --glass-bg: rgba(255, 255, 255, 0.9);
     /* Increased opacity for light mode */
     --glass-border: rgba(0, 0, 0, 0.1);
@@ -258,4 +258,49 @@ footer a:hover {
 .dropdown-item:hover {
     background-color: var(--primary-blue);
     color: #fff !important;
+}
+
+.testimonial-stars {
+    color: #ffc107;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Make all filled stars golden */
+.bi-star-fill {
+    color: #ffc107 !important;
+}
+
+/* Fix FAQ Accordion in Dark Mode */
+[data-theme="dark"] .accordion-button {
+    background-color: var(--card-bg-light);
+    color: var(--text-light) !important;
+}
+
+[data-theme="dark"] .accordion-button:not(.collapsed) {
+    background-color: var(--card-bg-light);
+    color: var(--primary-blue) !important;
+}
+
+[data-theme="dark"] .accordion-body {
+    background-color: var(--card-bg-light);
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .text-muted {
+    color: #cbd5e1 !important;
+    opacity: 1 !important;
+}
+
+/* Fix Newsletter Input in Dark Mode */
+[data-theme="dark"] .form-control {
+    background-color: #0e1628 !important;
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+[data-theme="dark"] .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+    opacity: 1 !important;
 }
