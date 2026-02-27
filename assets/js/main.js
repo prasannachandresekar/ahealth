@@ -1,28 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Theme Toggle Logic
-    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggles = [
+        document.getElementById('theme-toggle'),
+        document.getElementById('theme-toggle-mobile')
+    ].filter(el => el !== null);
+
     const htmlElement = document.documentElement;
-    const bodyElement = document.body;
 
     const savedTheme = localStorage.getItem('theme') || 'light';
     htmlElement.setAttribute('data-theme', savedTheme);
-    updateToggleIcon(savedTheme);
+    updateToggleIcons(savedTheme);
 
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = htmlElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        htmlElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateToggleIcon(newTheme);
+    themeToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateToggleIcons(newTheme);
+        });
     });
 
-    function updateToggleIcon(theme) {
-        const icon = themeToggle.querySelector('i');
-        if (theme === 'dark') {
-            icon.classList.replace('bi-moon-fill', 'bi-sun-fill');
-        } else {
-            icon.classList.replace('bi-sun-fill', 'bi-moon-fill');
-        }
+    function updateToggleIcons(theme) {
+        themeToggles.forEach(toggle => {
+            const icon = toggle.querySelector('i');
+            if (theme === 'dark') {
+                icon.classList.replace('bi-moon-fill', 'bi-sun-fill');
+            } else {
+                icon.classList.replace('bi-sun-fill', 'bi-moon-fill');
+            }
+        });
     }
 
     // Back to Top Logic
