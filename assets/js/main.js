@@ -53,4 +53,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Active Nav Link Highlighting
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link, .navbar-nav .dropdown-toggle');
+
+    // Remove all existing active classes first
+    navLinks.forEach(link => link.classList.remove('active'));
+
+    // Set active class based on current page
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href) return;
+
+        // For home pages, activate the Home dropdown toggle
+        if ((currentPage === 'index.html' || currentPage === 'home-2.html' || currentPage === '') &&
+            link.classList.contains('dropdown-toggle')) {
+            link.classList.add('active');
+        }
+        // For other pages, match the href
+        else if (href === currentPage) {
+            link.classList.add('active');
+        }
+    });
 });
